@@ -515,10 +515,16 @@ type (
 		Value    string `json:"value"`
 	}
 
+	//Payments for PurchaseUnit
+	Payments struct {
+		Captures []Capture `json:"captures"`
+	}
+
 	// PurchaseUnit struct
 	PurchaseUnit struct {
 		ReferenceID string              `json:"reference_id"`
 		Amount      *PurchaseUnitAmount `json:"amount,omitempty"`
+		Payments    *Payments           `JSON:"payments,omitempty"`
 	}
 
 	// TaxInfo used for orders.
